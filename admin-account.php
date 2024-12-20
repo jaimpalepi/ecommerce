@@ -14,7 +14,7 @@ include 'config.php';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Orders || EFS Shop</title>
+    <title>My Orders || BOLT Sports Shop</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
@@ -23,7 +23,7 @@ include 'config.php';
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="index.php">EFS Electronic Furniture Shop</a></h1>
+          <h1><a href="index.php">BOLT Sports Shop</a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
@@ -31,15 +31,12 @@ include 'config.php';
       <section class="top-bar-section">
       <!-- Right Nav Section -->
         <ul class="right">
-        <li><a href="index.php">Home</a></li>
-          <li><a href="products.php">Products</a></li>
-          <li><a href="cart.php">View Cart</a></li>
-          <li><a href="orders.php">My Orders</a></li>
-          <li><a href="about.php">About us</a></li>
+        <li><a href="admin.php">Products</a></li>
+          <li><a href="admin-orders.php">Orders</a></li>
           <?php
 
           if(isset($_SESSION['username'])){
-            echo '<li><a href="account.php">My Account</a></li>';
+            echo '<li><a href="admin-account.php">Account</a></li>';
             echo '<li><a href="logout.php">Log Out</a></li>';
           }
           else{
@@ -61,19 +58,18 @@ include 'config.php';
 
         <?php
           $user = $_SESSION["username"];
-          $result = $mysqli->query("SELECT * from orders where email='".$user."'");
+          $result = $mysqli->query("SELECT * from users");
           if($result) {
             while($obj = $result->fetch_object()) {
               //echo '<div class="large-6">';
-              echo '<p><h4>Order ID ->'.$obj->id.'</h4></p>';
-              echo '<p><strong>Date of Purchase</strong>: '.$obj->date.'</p>';
-              echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
-              echo '<p><strong>Product Name</strong>: '.$obj->product_name.'</p>';
-              echo '<p><strong>Price Per Unit</strong>: '.$obj->price.'</p>';
-              echo '<p><strong>Units Bought</strong>: '.$obj->units.'</p>';
-              echo '<p><strong>Total Cost</strong>: '.$currency.$obj->total.'</p>';
-              echo '<p><hr></p>';
-
+              echo '<p><h4>User Name ->'.$obj->fname.' '.$obj->lname.'</h4></p>';
+              echo '<p><h4>Address ->'.$obj->address.'</h4></p>';
+              echo '<p><strong>City</strong>: '.$obj->city.'</p>';
+              echo '<p><strong>Email</strong>: '.$obj->email.'</p>';
+              echo '<p><strong>Type</strong>: '.$obj->type.'</p>';
+              if($obj->type=="user"){echo '<a href="change.php?id=' . urlencode($obj->id) . '">Set as Seller</a><br>';}
+              if($obj->type=="seller"){echo '<a href="change.php?id=' . urlencode($obj->id) . '">Set as User</a><br>';}
+              
             }
           }
         ?>
@@ -87,7 +83,7 @@ include 'config.php';
       <div class="small-12">
 
         <footer style="margin-top:10px;">
-           <p style="text-align:center; font-size:0.8em;">&copy; EFS Furnitures Shop. All Rights Reserved.</p>
+           <p style="text-align:center; font-size:0.8em;">&copy; EFS Furniture Shop. All Rights Reserved.</p>
         </footer>
 
       </div>

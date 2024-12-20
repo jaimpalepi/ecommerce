@@ -18,7 +18,7 @@ include 'config.php';
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="index.php">EFC Electronic Furniture Shop</a></h1>
+          <h1><a href="index.php">EFS Electronic Furniture Shop</a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
@@ -30,7 +30,7 @@ include 'config.php';
           <li><a href="products.php">Products</a></li>
           <li class="active"><a href="cart.php">View Cart</a></li>
           <li><a href="orders.php">My Orders</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="about.php">About us</a></li>
           <?php
 
           if(isset($_SESSION['username'])){

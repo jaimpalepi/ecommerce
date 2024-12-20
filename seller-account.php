@@ -23,7 +23,7 @@ include 'config.php';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Account || BOLT Sports Shop</title>
+    <title>My Account || EFS Furniture Shop</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
@@ -32,7 +32,7 @@ include 'config.php';
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="index.php">EFS FUrniture Shop</a></h1>
+          <h1><a href="index.php">EFS Electronic Furniture Shop</a></h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
@@ -40,15 +40,12 @@ include 'config.php';
       <section class="top-bar-section">
       <!-- Right Nav Section -->
         <ul class="right">
-          <li><a href="about.php">About</a></li>
-          <li><a href="products.php">Products</a></li>
-          <li><a href="cart.php">View Cart</a></li>
-          <li><a href="orders.php">My Orders</a></li>
-          <li><a href="contact.php">Contact</a></li>
+        <li><a href="seller.php">Products</a></li>
+          <li><a href="seller-orders.php">Orders</a></li>
           <?php
 
           if(isset($_SESSION['username'])){
-            echo '<li class="active"><a href="account.php">My Account</a></li>';
+            echo '<li><a href="seller-account.php">Account</a></li>';
             echo '<li><a href="logout.php">Log Out</a></li>';
           }
           else{
@@ -130,6 +127,7 @@ include 'config.php';
                   echo '</div>';
                   echo '</div>';
 
+
                   echo '<div class="row">';
                   echo '<div class="small-3 columns">';
                   echo '<label for="right-label" class="right inline">Email</label>';
@@ -176,7 +174,7 @@ include 'config.php';
       <div class="small-12">
 
         <footer>
-           <p style="text-align:center; font-size:0.8em;">&copy; EFS Electronic Furniture Shop. All Rights Reserved.</p>
+           <p style="text-align:center; font-size:0.8em;">&copy; EFS Furniture Shop. All Rights Reserved.</p>
         </footer>
 
       </div>

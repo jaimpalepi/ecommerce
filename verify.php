@@ -26,6 +26,9 @@ if($result){
       $_SESSION['fname'] = $obj->fname;
       if($_SESSION['type']=="admin"){
         header("location:admin.php");
+      }
+      if($_SESSION['type']=="seller"){
+        header("location:seller.php");
       }else{
         header("location:index.php");
       }
