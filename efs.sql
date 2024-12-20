@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 18, 2024 at 02:46 PM
+-- Generation Time: Dec 20, 2024 at 06:53 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -45,7 +45,8 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `product_code`, `product_name`, `product_desc`, `price`, `units`, `total`, `date`, `email`) VALUES
 (12, 'EFC1', 'Kipas', 'Cosmos 12-LDA - Desk Fan 12 inch memiliki bilah kipas berukuran 12 inch, 3 level kecepatan dan tombol berhenti, dengan desain blade aerodinamis menyebarkan angin lebih merata & sejuk. Tombol model piano.', 226500, 1, 226500, '2024-11-21 14:47:58', 'sjobs@apple.com'),
-(13, 'EFC1', 'Kipas', 'Cosmos 12-LDA - Desk Fan 12 inch memiliki bilah kipas berukuran 12 inch, 3 level kecepatan dan tombol berhenti, dengan desain blade aerodinamis menyebarkan angin lebih merata & sejuk. Tombol model piano.', 226500, 1, 226500, '2024-12-16 11:16:37', 'zaimpahlevi25@gmail.com');
+(13, 'EFC1', 'Kipas', 'Cosmos 12-LDA - Desk Fan 12 inch memiliki bilah kipas berukuran 12 inch, 3 level kecepatan dan tombol berhenti, dengan desain blade aerodinamis menyebarkan angin lebih merata & sejuk. Tombol model piano.', 226500, 1, 226500, '2024-12-16 11:16:37', 'zaimpahlevi25@gmail.com'),
+(14, 'EFS1', 'Kipas', 'Cosmos 12-LDA - Desk Fan 12 inch memiliki bilah kipas berukuran 12 inch, 3 level kecepatan dan tombol berhenti, dengan desain blade aerodinamis menyebarkan angin lebih merata & sejuk. Tombol model piano.', 226500, 1, 226500, '2024-12-20 04:30:28', 'jaim@jaim');
 
 -- --------------------------------------------------------
 
@@ -69,9 +70,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`, `unggulan`) VALUES
-(1, 'EFC1', 'Kipas', 'Cosmos 12-LDA - Desk Fan 12 inch memiliki bilah kipas berukuran 12 inch, 3 level kecepatan dan tombol berhenti, dengan desain blade aerodinamis menyebarkan angin lebih merata & sejuk. Tombol model piano.', 'kipas.jpg', 14, 226500.00, 1),
-(2, 'BOLT2', 'Cap', 'A sleek, tonal stitched cap for runners. The plain texture and unique design will help runners to concentrate more on running and less on their hair. The combbination of casual and formal look is just brilliant.', 'cap.jpg', 7, 200.00, 0),
-(3, 'BOLT3', 'Sports Band', 'The Sports Band collection features highly polished stainless steel and space black stainless steel cases. The display is protected by sapphire crystal. And there is a choice of three different leather bands.', 'sports_band.jpg', 34, 1000.00, 0);
+(1, 'EFS1', 'Kipas', 'Cosmos 12-LDA - Desk Fan 12 inch memiliki bilah kipas berukuran 12 inch, 3 level kecepatan dan tombol berhenti, dengan desain blade aerodinamis menyebarkan angin lebih merata & sejuk. Tombol model piano.', 'kipas.jpg', 26, 226500.00, 0),
+(2, 'EFS2', 'Mesin Cuci', 'Motor penggerak langsung yang ada di dalam mesin cuci kami memiliki ketangguhan sekaligus tidak bising. Kami menjamin bahwa Anda tidak akan kecewa. ', 'cuci.jpeg', 7, 200000.00, 1),
+(3, 'EFS3', 'Lampu', 'Mode yang didukung:\r\nStandardSwitch: Kecerahan konstan, Tanpa remote, kabel sakelar USB\r\nRemoteControl: Kecerahan yang dapat disesuaikan, cahaya yang dapat disesuaikan, remote control, kabel sakelar USB', 'lampu.jpeg', 34, 75000.00, 1);
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,6 @@ CREATE TABLE `users` (
   `lname` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `city` varchar(100) NOT NULL,
-  `pin` int NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(15) NOT NULL,
   `type` varchar(20) NOT NULL DEFAULT 'user'
@@ -95,10 +95,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `fname`, `lname`, `address`, `city`, `pin`, `email`, `password`, `type`) VALUES
-(1, 'steve', 'jobs', 'kebumen', 'kebumen', 9999, 'sjobs@apple.com', 'jaim', 'user'),
-(2, 'Admin', 'Webmaster', 'Internet', 'Electricity', 101010, 'admin@admin.com', 'admin', 'admin'),
-(5, 'jaim', 'palepi', 'konoha', 'konoha', 177013, 'jaim@jaim', 'jaim', 'user');
+INSERT INTO `users` (`id`, `fname`, `lname`, `address`, `city`, `email`, `password`, `type`) VALUES
+(1, 'steve', 'jobs', 'kebumen', 'kebumen', 'sjobs@apple.com', 'steve', 'seller'),
+(2, 'Admin', 'Webmaster', 'Internet', 'Electricity', 'admin@admin.com', 'admin', 'admin'),
+(5, 'zaim', 'pahlevi', 'konoha', 'konoha', 'jaim@jaim', 'jaim', 'user');
 
 --
 -- Indexes for dumped tables
@@ -132,13 +132,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
