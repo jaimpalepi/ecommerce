@@ -35,7 +35,7 @@ function upload() {
     }
 }
 
-header("Location: admin.php");
+header("Location: seller.php");
 exit();
 
 ?>

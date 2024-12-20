@@ -21,7 +21,9 @@ if(isset($_SESSION['cart'])) {
 
         $user = $_SESSION["username"];
 
-        $query = $mysqli->query("INSERT INTO orders (product_code, product_name, product_desc, price, units, total, email) VALUES('$obj->product_code', '$obj->product_name', '$obj->product_desc', $obj->price, $quantity, $cost, '$user')");
+        $status = "menunggu konfirmasi";
+
+        $query = $mysqli->query("INSERT INTO orders (product_code, product_name, product_desc, price, units, total, email, status) VALUES('$obj->product_code', '$obj->product_name', '$obj->product_desc', $obj->price, $quantity, $cost, '$user', '$status')");
 
         if($query){
           $newqty = $obj->qty - $quantity;
@@ -66,6 +68,6 @@ if(isset($_SESSION['cart'])) {
 }
 
 unset($_SESSION['cart']);
-header("location:success.php");
+header("location:orders.php");
 
 ?>

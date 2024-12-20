@@ -72,6 +72,7 @@ include 'config.php';
               echo '<p><strong>Price Per Unit</strong>: '.$obj->price.'</p>';
               echo '<p><strong>Units Bought</strong>: '.$obj->units.'</p>';
               echo '<p><strong>Total Cost</strong>: '.$currency.$obj->total.'</p>';
+              echo '<p><strong>Status</strong>: '.$obj->status.'</p>';
               echo '<p><hr></p>';
 
             }

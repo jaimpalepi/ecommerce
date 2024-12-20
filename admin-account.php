@@ -69,6 +69,7 @@ include 'config.php';
               echo '<p><strong>Type</strong>: '.$obj->type.'</p>';
               if($obj->type=="user"){echo '<a href="change.php?id=' . urlencode($obj->id) . '">Set as Seller</a><br>';}
               if($obj->type=="seller"){echo '<a href="change.php?id=' . urlencode($obj->id) . '">Set as User</a><br>';}
+              if($obj->type!="admin"){echo '<a href="hapus.php?id=' . urlencode($obj->id) . '">Hapus Akun</a>';}
               
             }
           }

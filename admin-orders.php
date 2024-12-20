@@ -53,7 +53,7 @@ include 'config.php';
 
     <div class="row" style="margin-top:10px;">
       <div class="large-12">
-        <h3>My COD Orders</h3>
+        <h3>COD Orders List</h3>
         <hr>
 
         <?php
@@ -70,6 +70,15 @@ include 'config.php';
               echo '<p><strong>Price Per Unit</strong>: '.$obj->price.'</p>';
               echo '<p><strong>Units Bought</strong>: '.$obj->units.'</p>';
               echo '<p><strong>Total Cost</strong>: '.$currency.$obj->total.'</p>';
+              echo '<p><strong>Status</strong>: '.$obj->status.'</p>';
+              if($obj->status=="menunggu konfirmasi")echo '<a href="admin-status.php?id='. urlencode($obj->id) . '">Konfirmasi Pembayaran</a>';
+              if($obj->status=="diproses")echo '<a href="admin-status.php?id='. urlencode($obj->id) . '">Konfirmasi Pengiriman</a>';
+              if($obj->status=="dikirim")echo '<a href="admin-status.php?id='. urlencode($obj->id) . '">Selesaikan Pesanan</a>';
+              // echo '<form method="POST" action="admin-status.php" style="margin-top:30px;">';
+              // echo '<p><stron>Status :</strong></p>';
+              // echo '<input type="text" id="right-label" placeholder="'. $obj->status. '" name="status">';
+              // echo '<input type="submit" value="ubah status"';
+              // echo '</form>';
               echo '<p><hr></p>';
 
             }
