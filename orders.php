@@ -35,7 +35,7 @@ include 'config.php';
           <li><a href="products.php">Products</a></li>
           <li><a href="cart.php">View Cart</a></li>
           <li class="active"><a href="orders.php">My Orders</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="about.php">About us</a></li>
           <?php
 
           if(isset($_SESSION['username'])){
@@ -72,10 +72,6 @@ include 'config.php';
               echo '<p><strong>Price Per Unit</strong>: '.$obj->price.'</p>';
               echo '<p><strong>Units Bought</strong>: '.$obj->units.'</p>';
               echo '<p><strong>Total Cost</strong>: '.$currency.$obj->total.'</p>';
-              //echo '</div>';
-              //echo '<div class="large-6">';
-              //echo '<img src="images/products/sports_band.jpg">';
-              //echo '</div>';
               echo '<p><hr></p>';
 
             }

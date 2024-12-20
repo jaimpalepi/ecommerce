@@ -30,11 +30,11 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
       <section class="top-bar-section">
       <!-- Right Nav Section -->
         <ul class="right">
-          <li><a href="about.php">About</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="products.php">Products</a></li>
           <li><a href="cart.php">View Cart</a></li>
           <li><a href="orders.php">My Orders</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="about.php">About us</a></li>
           <?php
 
           if(isset($_SESSION['username'])){

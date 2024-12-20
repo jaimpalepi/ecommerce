@@ -36,7 +36,7 @@ if(isset($_SESSION["username"])){
           <li><a href="products.php">Products</a></li>
           <li><a href="cart.php">View Cart</a></li>
           <li><a href="orders.php">My Orders</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="about.php">About us</a></li>
           <?php
 
           if(isset($_SESSION['username'])){

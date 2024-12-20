@@ -31,7 +31,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
           <li><a href="products.php">Products</a></li>
           <li><a href="cart.php">View Cart</a></li>
           <li><a href="orders.php">My Orders</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="about.php">About us</a></li>
           <?php
 
           if(isset($_SESSION['username'])){
@@ -83,12 +83,10 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             while($obj = $result->fetch_object()) {
               echo '<div class="large-12 columns" style="display: flex; align-items: center; margin-bottom: 20px;">';
 
-              // Bagian kiri: Gambar
               echo '<div style="flex: 1;">';
               echo '<img src="images/products/'.$obj->product_img_name.'" style="max-width: 100%; height: auto;"/>';
               echo '</div>';
 
-              // Bagian kanan: Detail produk
               echo '<div style="flex: 2; padding-left: 20px;">';
               echo '<h3>'.$obj->product_name.'</h3>';
               echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
@@ -96,7 +94,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
               echo '<p><strong>Units Available</strong>: '.$obj->qty.'</p>';
               echo '<p><strong>Price (Per Unit)</strong>: Rp '.$obj->price.'</p>';
 
-              // Tombol Add to Cart
               if($obj->qty > 0){
                 echo '<p><a href="update-cart.php?action=add&id='.$obj->id.'">';
                 echo '<input type="submit" value="Add To Cart" style="background: #0078A0; border: none; color: #fff; font-size: 1em; padding: 10px; cursor: pointer;" />';
@@ -105,8 +102,8 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
                 echo '<p style="color: red;">Out Of Stock!</p>';
               }
 
-              echo '</div>'; // End Div Kanan
-              echo '</div>'; // End Flex Container
+              echo '</div>'; 
+              echo '</div>'; 
               $i++;
             }
           }
