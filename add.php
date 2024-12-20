@@ -35,14 +35,13 @@ include 'config.php';
 
       <section class="top-bar-section">
       <!-- Right Nav Section -->
-        <ul class="right">
-          <li><a href="products.php">Products</a></li>
-          <li><a href="admin-orders.php">Contact</a></li>
-          <li><a href="admin-account.php">Contact</a></li>
+      <ul class="right">
+          <li><a href="admin.php">Products</a></li>
+          <li><a href="admin-orders.php">Orders</a></li>
           <?php
 
           if(isset($_SESSION['username'])){
-            echo '<li><a href="account.php">Account</a></li>';
+            echo '<li><a href="admin-account.php">Account</a></li>';
             echo '<li><a href="logout.php">Log Out</a></li>';
           }
           else{
@@ -59,35 +58,63 @@ include 'config.php';
       <div class="large-12">
         <h3>Hey Admin!</h3>
         <form method="POST" action="admin-insert.php" enctype="multipart/form-data">
-            <table>
-                <tr>
-                    <td>Product Code</td>
-                    <td><input type="text" name="code"></td>
-                </tr>
-                <tr>
-                    <td>Product Name</td>
-                    <td><input type="text" name="name"></td>
-                </tr>
-                <tr>
-                    <td>Product Desc</td>
-                    <td><input type="text" name="desc"></td>
-                </tr>
-                <tr>
-                    <td>Product Image</td>
-                    <td><input type="file" name="img"></td>
-                </tr>
-                <tr>
-                    <td>Quantity</td>
-                    <td><input type="number" name="qty"></td>
-                </tr>
-                <tr>
-                    <td>Price</td>
-                    <td><input type="text" name="price"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input style="clear:both;" type="submit" class="button" value="Tambah Barang"></td>
-                </tr>
-            </table>
+            <div class="row">
+              <div class="small-4 columns">
+                <label for="right-label" class="right inline">Product Code</label>
+              </div>
+              <div class="small-8 columns">
+                <input type="text" id="right-label" name="code">
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="small-4 columns">
+                <label for="right-label" class="right inline">Product Name</label>
+              </div>
+              <div class="small-8 columns">
+                <input type="text" id="right-label" name="name">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="small-4 columns">
+                <label for="right-label" class="right inline">Product Description</label>
+              </div>
+              <div class="small-8 columns">
+                <input type="text" id="right-label" name="desc">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="small-4 columns">
+                <label for="right-label" class="right inline">Product Image</label>
+              </div>
+              <div class="small-8 columns">
+                <input type="file" name="img">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="small-4 columns">
+                <label for="right-label" class="right inline">Quantity</label>
+              </div>
+              <div class="small-8 columns">
+                <input type="text" id="right-label" name="qty">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="small-4 columns">
+                <label for="right-label" class="right inline">Price</label>
+              </div>
+              <div class="small-8 columns">
+                <input type="text" id="right-label" name="price">
+              </div>
+            </div>
+
+            <input type="submit" id="right-label" value="Tambah Produk" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;">
+
+                      
         </form>
       </div>
     </div>

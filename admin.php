@@ -36,7 +36,7 @@ include 'config.php';
       <section class="top-bar-section">
       <!-- Right Nav Section -->
         <ul class="right">
-          <li><a href="products.php">Products</a></li>
+          <li><a href="admin.php">Products</a></li>
           <li><a href="admin-orders.php">Orders</a></li>
           <?php
 
@@ -63,6 +63,11 @@ include 'config.php';
             while($obj = $result->fetch_object()) {
               echo '<div class="large-4 columns">';
               echo '<p><h3>'.$obj->product_name.'</h3></p>';
+              if($obj->unggulan == 0){
+              echo '<a href="unggulan.php?id=' . urlencode($obj->id) . '">Jadikan Unggulan</a><br>';}
+              if($obj->unggulan == 1){
+              echo '<a href="unggulan.php?id=' . urlencode($obj->id) . '">Hapus dari Unggulan</a><br>';}
+              echo '<a href="delete.php?id=' . urlencode($obj->id) . '">Delete</a>';
               echo '<img src="images/products/'.$obj->product_img_name.'"/>';
               echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
               echo '<p><strong>Description</strong>: '.$obj->product_desc.'</p>';

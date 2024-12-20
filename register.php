@@ -92,14 +92,6 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
           </div>
           <div class="row">
             <div class="small-4 columns">
-              <label for="right-label" class="right inline">Pin Code</label>
-            </div>
-            <div class="small-8 columns">
-              <input type="number" id="right-label" placeholder="400056" name="pin">
-            </div>
-          </div>
-          <div class="row">
-            <div class="small-4 columns">
               <label for="right-label" class="right inline">E-Mail</label>
             </div>
             <div class="small-8 columns">
